@@ -1,4 +1,4 @@
-package com.lucas.cursomc.resources;
+	package com.lucas.cursomc.resources;
 
 import java.net.URI;
 
@@ -41,6 +41,13 @@ public class CategoriaResource {
 		obj = service.update(obj);
 		return ResponseEntity.noContent().build();
 		
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable Integer id) {
+		service.delete(id);
+		
+		return ResponseEntity.noContent().build();
 	}
 
 }
